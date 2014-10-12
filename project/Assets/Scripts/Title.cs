@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Words : MonoBehaviour {
+public class Title : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -10,6 +10,10 @@ public class Words : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		//mouse
+		if (Input.GetMouseButtonDown(0))
+		{
+			Application.LoadLevel("Main");
+		}
 	}
 }
