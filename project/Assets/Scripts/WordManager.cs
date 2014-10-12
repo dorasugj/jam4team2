@@ -27,6 +27,7 @@ public class WordManager : MonoBehaviour {
 		// nextWordIndexを元にワードを生成していく
 		switch (nextWordIndex) {
 		case 0:
+			GetComponent<Teacher>().Shake();
 			PopWord(CharMovePosList[nextWordIndex]);
 			break;
 		case 1:
@@ -48,11 +49,12 @@ public class WordManager : MonoBehaviour {
 		string word = "コラ！！！";
 		int fontSize = 90;
 		int charCnt = 0;
+		int half = (word.Length - 1) * fontSize / 2;
 
 		foreach (var chr in word) {
 			Debug.Log (charCnt * fontSize);
 			int x = charCnt * fontSize + 70;
-			wordPosition.Add (new CharInfo(new Vector3(x + 70, 500, 0), new Vector3(200, 200, 0), word[charCnt]));
+			wordPosition.Add (new CharInfo(new Vector3((x - half) + 250, 500, 0), new Vector3(-(x - half) + 250, 100, 0), word[charCnt]));
 			charCnt++;
 		}
 
