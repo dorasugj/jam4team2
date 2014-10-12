@@ -16,5 +16,6 @@ public class Teacher : MonoBehaviour {
 		iTween.ShakePosition(teacher, iTween.Hash("x", -1));
 		iTween.ShakeRotation(teacher, iTween.Hash("y", 1));
 		iTween.ShakeScale(teacher, iTween.Hash("x", 1.1, "y", 1.1));
+		GetComponent<Seito>().Shake ();
 	}
 }

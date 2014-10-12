@@ -54,7 +54,7 @@ public class WordManager : MonoBehaviour {
 		foreach (var chr in word) {
 			Debug.Log (charCnt * fontSize);
 			int x = charCnt * fontSize + 70;
-			wordPosition.Add (new CharInfo(new Vector3((x - half) + 250, 500, 0), new Vector3(-(x - half) + 250, 100, 0), word[charCnt]));
+			wordPosition.Add (new CharInfo(new Vector3(-(x - half) + 250, 500, 0), new Vector3((x - half) + 250, 100, 0), word[charCnt]));
 			charCnt++;
 		}
 

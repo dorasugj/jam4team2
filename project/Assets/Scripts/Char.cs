@@ -31,7 +31,11 @@ public class Char : MonoBehaviour {
 	}
 
 	public void MoveStart() {
-		iTween.MoveTo (textObj, iTween.Hash("x", endPos.x, "y", endPos.y, "z", endPos.z, "time", 3f, "easetype", iTween.EaseType.easeOutCubic));
+		iTween.MoveTo (textObj, iTween.Hash("x", endPos.x, "y", endPos.y, "z", endPos.z, "time", 3f, "easetype", iTween.EaseType.easeOutCubic, "oncomplete", "OnComplete", "oncompletetarget", gameObject));
+	}
+
+	void OnComplete() {
+		Destroy (gameObject);
 	}
 
 	public void SetInfo(Vector3 startPos, Vector3 endPos, char text) {
